@@ -35,7 +35,11 @@ function addSong(event){
    $('#songs').empty();
 
    songs.forEach(function(song){
+     var addedOn = 'unknown';
+    if(song.dateAdded){
+      addedOn =new Date (song.dateAdded).toDateString();
+    }
      $('#songs').append('<li>' + song.title + ' by ' +
-     song.artist + ' from album ' + song.album + ' added on ' + song.dateAdded + '</li>');
+     song.artist + ' from album ' + song.album + ' added on ' + addedOn + '</li>');
    });
  }

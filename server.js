@@ -32,6 +32,7 @@ app.post('/songs', function (req, res){
     res.sendStatus(400);
   }else{
     //puts object into the array (called songs)
+    req.body.dateAdded = new Date();
     songs.push(req.body);
     res.sendStatus(200);
   }
@@ -51,7 +52,6 @@ function duplicateCheck(double){
   return duplicate;
 };
 
-var date = Date.month();
-req.body['datedAdded'] = date;
+
 
 app.listen(3000);
