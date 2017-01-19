@@ -28,10 +28,10 @@ app.get('/songs', function (req, res){
 
 app.post('/songs', function (req, res){
   console.log('req.body', req.body);
-  //puts object into the array (called songs)
   if(req.body.title == '' || req.body.artist == '' || req.body.albums == '' || duplicateCheck(req.body)){
     res.sendStatus(400);
   }else{
+    //puts object into the array (called songs)
     songs.push(req.body);
     res.sendStatus(200);
   }
@@ -50,4 +50,8 @@ function duplicateCheck(double){
   })
   return duplicate;
 };
+
+var date = Date.month();
+req.body['datedAdded'] = date;
+
 app.listen(3000);

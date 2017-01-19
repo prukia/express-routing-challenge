@@ -33,9 +33,9 @@ function addSong(event){
    console.log(songs);
 
    $('#songs').empty();
-   
+
    songs.forEach(function(song){
      $('#songs').append('<li>' + song.title + ' by ' +
-     song.artist + ' from album ' + song.album + '</li>');
+     song.artist + ' from album ' + song.album + ' added on ' + song.dateAdded + '</li>');
    });
  }
